@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "43b991a5-f9c2-467c-bc58-fa6d3d12aab0",
+		"name": "Network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38430260"
+	},
+	"item": [
+		{
+			"name": "Регистрация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user2\",\r\n  \"email\": \"user2@example.com\",\r\n  \"password\": \"SecurePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Вход в аккаунт",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://127.0.0.1:8000/users/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Создать обьект",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODA1ODY2LCJpYXQiOjE3MzQ4MDQzNjYsImp0aSI6IjEzZDUzZDIyZmUwZjQxMTdhZDA2NThkNThkY2I1ODk0IiwidXNlcl9pZCI6Mn0.8w-_djwdjZXMvV6plLhmBIr8K3gz33PI9OZp0kZ8n3s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Завод Электроника\",\r\n  \"email\": \"factory@example.com\",\r\n  \"country\": \"Россия\",\r\n  \"city\": \"Москва\",\r\n  \"street\": \"Тверская\",\r\n  \"house_number\": \"15\",\r\n  \"products\": [\r\n    {\r\n      \"name\": \"Телевизор\",\r\n      \"model\": \"XTV-1000\",\r\n      \"release_date\": \"2023-12-01\"\r\n    },\r\n    {\r\n      \"name\": \"Холодильник\",\r\n      \"model\": \"CoolMax 3000\",\r\n      \"release_date\": \"2023-06-15\"\r\n    }\r\n  ],\r\n  \"supplier\": null,\r\n  \"debt\": \"0.00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/network/network/"
+			},
+			"response": []
+		},
+		{
+			"name": "Показать все",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODUzOTk4LCJpYXQiOjE3MzQ4NTMwOTgsImp0aSI6IjdlZGQzYzg1ZTFkOTQwMGE4OGNiN2ZhMGIxYTRjOTFjIiwidXNlcl9pZCI6MX0.30p8xvkv_HbTtInsti5ri35T6r8lBRQrtri-XttFifw",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/network/network/"
+			},
+			"response": []
+		},
+		{
+			"name": "Фильтр по стране",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODUzOTk4LCJpYXQiOjE3MzQ4NTMwOTgsImp0aSI6IjdlZGQzYzg1ZTFkOTQwMGE4OGNiN2ZhMGIxYTRjOTFjIiwidXNlcl9pZCI6MX0.30p8xvkv_HbTtInsti5ri35T6r8lBRQrtri-XttFifw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/network/network/?country=Россия",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"network",
+						"network",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Россия"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение обьекта",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODUzOTk4LCJpYXQiOjE3MzQ4NTMwOTgsImp0aSI6IjdlZGQzYzg1ZTFkOTQwMGE4OGNiN2ZhMGIxYTRjOTFjIiwidXNlcl9pZCI6MX0.30p8xvkv_HbTtInsti5ri35T6r8lBRQrtri-XttFifw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"city\": \"Санкт-Петербург\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/network/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление обьекта",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODU0OTA4LCJpYXQiOjE3MzQ4NTQwMDgsImp0aSI6IjAyYjlmMjQzMmY1YTQwMzA5ODQ1ODU2Y2U3ZmQ1NzAzIiwidXNlcl9pZCI6MX0.zz88gaU57HZEKr1WeI6niFoTjNeDVOxNf_WpovSEix0",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/network/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Создание продукта",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODU1NDUwLCJpYXQiOjE3MzQ4NTQ1NTAsImp0aSI6ImM1MTA2NTI2ZWRhYjRhY2M4OGUyMTg2MjY4ZDAxMmIxIiwidXNlcl9pZCI6MX0.f7xgfNWnOzDczfNrM2aRJ03i18H56hjS6c3Uk9wE7lE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Холодильник\",\r\n  \"model\": \"CoolMax 3000\",\r\n  \"release_date\": \"2023-06-15\",\r\n  \"network\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/network/products/"
+			},
+			"response": []
+		},
+		{
+			"name": "Получение всех продуктов",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODU1NDUwLCJpYXQiOjE3MzQ4NTQ1NTAsImp0aSI6ImM1MTA2NTI2ZWRhYjRhY2M4OGUyMTg2MjY4ZDAxMmIxIiwidXNlcl9pZCI6MX0.f7xgfNWnOzDczfNrM2aRJ03i18H56hjS6c3Uk9wE7lE",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/network/products/"
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение продукта",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0ODU1NDUwLCJpYXQiOjE3MzQ4NTQ1NTAsImp0aSI6ImM1MTA2NTI2ZWRhYjRhY2M4OGUyMTg2MjY4ZDAxMmIxIiwidXNlcl9pZCI6MX0.f7xgfNWnOzDczfNrM2aRJ03i18H56hjS6c3Uk9wE7lE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"model\": \"Samsung\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/network/products/3/"
+			},
+			"response": []
+		}
+	]
+}
