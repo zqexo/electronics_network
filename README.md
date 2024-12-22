@@ -86,8 +86,8 @@ electronics_network/
 
 ### 1. Склонируйте репозиторий
 ```bash
-git clone https://github.com/zqexo/electronics-network.git
-cd electronics-network
+git clone https://github.com/zqexo/electronics_network.git
+cd electronics_network
 ```
 ### 2. Настройте переменные окружения
 Создайте файл .env.docker в корне проекта со следующим содержимым:
